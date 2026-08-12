@@ -5,282 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AERONAVES</title>
     <link rel="stylesheet" href="aeronave.css">
-    <style> 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #f5f6fa;
-            color: #333;
-            display: flex;
-            justify-content: center;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            background-color: #ffffff;
-            min-height: 100vh;
-            box-shadow: 0 0 20px rgba(0,0,0,0.05);
-        }
-
-        header {
-            background: linear-gradient(135deg, #a5c0ff 0%, #d4a5ff 100%);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .btn-back {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 16px;
-            color: #1a1a2e;
-        }
-
-        header h1 {
-            font-size: 20px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            color: #1a1a2e;
-            text-transform: uppercase;
-        }
-
-        .header-icons {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .icon-mail {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .icon-mail svg {
-            width: 26px;
-            height: 26px;
-            fill: none;
-            stroke: #1a1a2e;
-            stroke-width: 2;
-        }
-
-        .badge {
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            background-color: #ff3b30;
-            color: white;
-            font-size: 10px;
-            font-weight: bold;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .icon-user {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .icon-user svg {
-            width: 20px;
-            height: 20px;
-            fill: #1a1a2e;
-        }
-
-        .hero {
-            padding: 40px 60px 20px;
-        }
-
-        .subtitle {
-            color: #b5c000;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .title {
-            font-size: 32px;
-            font-weight: 800;
-            color: #1a1a2e;
-            line-height: 1.2;
-            margin-bottom: 20px;
-        }
-
-        .title span {
-            color: #5c62ec;
-            display: block;
-        }
-
-        .description {
-            color: #666;
-            font-size: 15px;
-            line-height: 1.5;
-            max-width: 600px;
-            margin-bottom: 30px;
-        }
-
-        .divider {
-            height: 1px;
-            background-color: #e0e0e0;
-            width: 100%;
-            margin-bottom: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            padding: 0 60px 60px;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-bottom: 20px;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-        }
-
-        .card-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .card-title {
-            font-size: 13px;
-            font-weight: 800;
-            color: #222;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 15px;
-            text-align: center;
-            padding: 0 10px;
-        }
-
-        .btn-comprar {
-            background-color: #e3ca3b;
-            color: #1a1a2e;
-            border: none;
-            border-radius: 8px;
-            padding: 10px 0;
-            width: 75%;
-            font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 1px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: background-color 0.2s;
-            display: inline-block;
-            text-align: center;
-            text-decoration: none;
-        }
-
-        .btn-comprar:hover {
-            background-color: #d4bc31;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                max-width: 100%;
-            }
-
-            header {
-                padding: 15px 20px;
-            }
-
-            .hero {
-                padding: 30px 25px 15px;
-            }
-
-            .title {
-                font-size: 24px;
-            }
-
-            .description {
-                font-size: 14px;
-            }
-
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-                padding: 0 20px 40px;
-            }
-
-            .card-img {
-                height: 120px;
-            }
-
-            .card-title {
-                font-size: 11px;
-            }
-
-            .btn-comprar {
-                padding: 8px 0;
-                font-size: 11px;
-                width: 80%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-
-            .card-img {
-                height: 100px;
-            }
-
-            .card-title {
-                font-size: 10px;
-            }
-        }
-    
-
-    </style>
+   
 </head>
 <body>
 
@@ -321,43 +46,43 @@
             <div class="divider"></div>
         </section>
 
-        <section class="grid">
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\400xp.jpg" alt="Hawker 400XP">
-                <div class="card-title">HAWKER 400XP</div>
-                <a class="btn-comprar" href="400xp.html">COMPRAR</a>
-            </div>
+       <section class="grid">
+    <div class="card">
+        <img class="card-img" src="400xp.jpg" alt="Hawker 400XP">
+        <div class="card-title">HAWKER 400XP</div>
+        <a class="btn-comprar" href="400xp.html">COMPRAR</a>
+    </div>
 
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\CH605.jpg" alt="Bombardier Challenger 605">
-                <div class="card-title">BOMBARDIER CHALLENGER 605</div>
-                <a class="btn-comprar" href="ch605 (1).html">COMPRAR</a>
-            </div>
+    <div class="card">
+        <img class="card-img" src="CH605.jpg" alt="Bombardier Challenger 605">
+        <div class="card-title">BOMBARDIER CHALLENGER 605</div>
+        <a class="btn-comprar" href="ch605 (1).html">COMPRAR</a>
+    </div>
 
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\n101JT.jpg" alt="JetIt N101JT">
-                <div class="card-title">JetIt N101JT</div>
-                <a class="btn-comprar" href="N101JT (1).html">COMPRAR</a>
-            </div>
+    <div class="card">
+        <img class="card-img" src="n101JT.jpg" alt="JetIt N101JT">
+        <div class="card-title">JetIt N101JT</div>
+        <a class="btn-comprar" href="N101JT (1).html">COMPRAR</a>
+    </div>
 
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\g200.jpg" alt="Gulfstream G200">
-                <div class="card-title">GULF G200</div>
-                <a class="btn-comprar" href="G200 (1).html">COMPRAR</a>
-            </div>
+    <div class="card">
+        <img class="card-img" src="g200.jpg" alt="Gulfstream G200">
+        <div class="card-title">GULF G200</div>
+        <a class="btn-comprar" href="G200 (1).html">COMPRAR</a>
+    </div>
 
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\PHENOM300.jpg" alt="Embraer Phenom 300">
-                <div class="card-title">EMBRAER PHENOM 300</div>
-                <a class="btn-comprar" href="ph300.html">COMPRAR</a>
-            </div>
+    <div class="card">
+        <img class="card-img" src="PHENOM300.jpg" alt="Embraer Phenom 300">
+        <div class="card-title">EMBRAER PHENOM 300</div>
+        <a class="btn-comprar" href="ph300.html">COMPRAR</a>
+    </div>
 
-            <div class="card">
-                <img class="card-img" src="C:\Users\USUARIO\Desktop\Criação de sites\Boreal_Felipe_622\Boreal\2000ex.jpg" alt="Dassault Falcon 2000EX">
-                <div class="card-title">DASSAULT FALCON 2000EX</div>
-                <a class="btn-comprar" href="2000EX (1).html">COMPRAR</a>
-            </div>
-        </section>
+    <div class="card">
+        <img class="card-img" src="2000ex.jpg" alt="Dassault Falcon 2000EX">
+        <div class="card-title">DASSAULT FALCON 2000EX</div>
+        <a class="btn-comprar" href="2000EX (1).html">COMPRAR</a>
+    </div>
+</section>
     </div>
 
 </body>
