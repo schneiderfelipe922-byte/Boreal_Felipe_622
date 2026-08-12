@@ -109,6 +109,7 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             margin-bottom: 35px;
+            justify-items: center;
         }
 
         .nav-card {
@@ -119,9 +120,9 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin-left: 70px;
-            width: 140px;
-           
+            gap: 12px;
+            width: 100%;
+            max-width: 140px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             cursor: pointer;
             transition: transform 0.2s, box-shadow 0.2s;
@@ -139,9 +140,11 @@
 
         .nav-card img, .nav-card i {
             font-size: 28px;
+            width: 32px;
             height: 32px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
         .nav-card.active i {
